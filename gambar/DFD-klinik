@@ -1,0 +1,14 @@
+graph TD
+    Pasien[Pasien] --> |Mendaftar| A[Proses Pendaftaran]
+    A --> |Data Pasien| B[Proses Pemeriksaan]
+    B --> |Hasil Pemeriksaan| C[Proses Penentuan Layanan]
+    C --> |Resep Obat| D[Proses Pemberian Obat]
+    C --> |Rujukan Lab| E[Proses Layanan Laboratorium]
+    C --> |Layanan Persalinan| F[Proses Layanan Persalinan]
+    D --> |Tagihan Obat| G[Proses Pembayaran]
+    E --> |Tagihan Lab| G
+    F --> |Tagihan Persalinan| G
+    B --> |Jasa Dokter| G
+    G --> |Pembayaran| Kasir[Kasir]
+    Kasir --> |Laporan Keuangan| H[Proses Pelaporan]
+    H --> |Laporan| Manajemen[Manajemen Klinik]
